@@ -1,20 +1,32 @@
 // src/components/YouTubeRecommender.jsx
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function YouTubeRecommender() {
-  // Imagine data fetched from API with recommended courses here
+  const courses = [
+    { id: 1, title: 'React Basics', description: 'Understand core React features.' },
+    { id: 2, title: 'Advanced React', description: 'Learn hooks and context.' },
+    { id: 3, title: 'React with Tailwind', description: 'Build stunning UIs.' },
+  ];
+
   return (
     <section>
-      <h1 className="text-3xl font-bold text-blue-700 mb-6">Recommended Courses</h1>
-      <div className="grid grid-cols-2 gap-6">
-        {[1, 2, 3].map((id) => (
-          <div key={id} className="bg-white shadow rounded-xl p-4 flex flex-col">
-            <div className="font-bold text-lg mb-2">Course Title {id}</div>
-            <p className="text-gray-600 mb-3">Brief course description to help user decide.</p>
-            <button className="bg-blue-600 text-white px-4 py-2 rounded mt-auto hover:bg-blue-700 transition">
+      <h1 className="text-3xl font-semibold text-indigo-700 mb-8">Recommended Courses</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {courses.map((course, i) => (
+          <motion.div
+            key={course.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: i * 0.15 }}
+            className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow cursor-pointer flex flex-col"
+          >
+            <h2 className="text-xl font-semibold mb-4">{course.title}</h2>
+            <p className="text-gray-600 flex-grow">{course.description}</p>
+            <button className="mt-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition">
               Go to Course
             </button>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
