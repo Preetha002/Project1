@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -72,3 +73,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Ai-personalized-study-assistant
 >>>>>>> 9da054614daad50164d48c67fdf26f4c00ca376f
+=======
+project
+>>>>>>> 11dca24b490bde53f59e31646af2df3cee955baf
