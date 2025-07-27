@@ -1,1 +1,1 @@
-# Ai-personalized-sstudy-assistant
+# Ai-personalized-study-assistant
