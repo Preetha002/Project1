@@ -1,17 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import Login from './components/Login';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Default route '/' shows Login */}
         <Route path="/" element={<Login />} />
-        {/* Login route */}
-        <Route path="/login" element={<Login />} />
-        {/* Dashboard route */}
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
