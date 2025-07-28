@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
-import Sidebar from './components/Sidebar';
-// import other components as usual
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
-export default function App() {
-  const [active, setActive] = useState('dashboard');
+function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/20 to-secondary/20 flex">
-      <Sidebar active={active} setActive={setActive} />
-      <div className="flex-1 ml-20 min-h-screen transition">
-        {/* Main app content here */}
-        {/* Replace with your page switch logic, example: */}
-        {/* {active === 'dashboard' && <Dashboard />} */}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        {/* Default route '/' shows Login */}
+        <Route path="/" element={<Login />} />
+        {/* Login route */}
+        <Route path="/login" element={<Login />} />
+        {/* Dashboard route */}
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;

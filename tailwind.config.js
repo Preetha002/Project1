@@ -1,17 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',  // enables toggling dark mode with 'dark' class
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}', // Adjust if your components live elsewhere
+  ],
   theme: {
     extend: {
       colors: {
-        primary: '#3B82F6',   // Vibrant blue
-        secondary: '#8B5CF6', // Electric purple
-        neutral: '#F8FAFC',   // Light glass-white shade
-        accent: '#F97316',    // Coral accent
+        purple: {
+          700: '#6B21A8', // main purple shade for backgrounds
+          800: '#581C87', // darker purple for sidebar bg and cards
+          900: '#4C1D95', // deepest purple shade
+        },
+        indigo: {
+          400: '#818CF8', // highlight / progress bar fill
+          600: '#4F46E5', // primary indigo shade for buttons
+          700: '#4338CA', // hover / darker indigo
+        },
+      },
+      fontFamily: {
+        sans: ['Poppins', 'ui-sans-serif', 'system-ui'], // default sans font is Poppins
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'), // optional plugin for form styling
-  ],
+  plugins: [],
 };

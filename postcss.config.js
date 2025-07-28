@@ -1,8 +1,7 @@
+// This goes in your project ROOT directory
 module.exports = {
   plugins: {
-    '@tailwindcss/postcss': {
-      config: './tailwind.config.js'  // Point to your Tailwind config
-    },
+    tailwindcss: {},
     autoprefixer: {},
   }
 }
